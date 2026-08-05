@@ -48,7 +48,7 @@ export default function Navbar({ onOpenShortcuts }) {
               onClick={() => handleScrollTo(link.id)}
               className="text-sm font-medium text-gray-300 hover:text-accent transition-colors duration-300 flex items-center gap-2 cursor-pointer"
             >
-              <kbd className="px-1.5 py-0.5 rounded bg-neutral-950 border border-emerald-500/30 text-emerald-400 font-mono text-[9px] font-bold shadow-[0_1px_0_rgba(16,185,129,0.1)]">
+              <kbd className="px-1.5 py-0.5 rounded bg-neutral-950 border border-[var(--color-accent-border)] text-accent font-mono text-[9px] font-bold shadow-[0_1px_0_rgba(192,132,252,0.1)]">
                 {link.key}
               </kbd>
               <span>{link.name}</span>
@@ -59,10 +59,10 @@ export default function Navbar({ onOpenShortcuts }) {
         {/* Desktop / Mobile Shortcuts Toggle */}
         <button
           onClick={onOpenShortcuts}
-          className="px-4.5 py-2.5 rounded-xl text-xs font-semibold text-gray-300 hover:text-white border border-neutral-900 hover:border-emerald-500/20 bg-neutral-950/40 hover:bg-emerald-500/5 transition-all duration-300 flex items-center gap-2 cursor-pointer shrink-0"
+          className="px-4.5 py-2.5 rounded-xl text-xs font-semibold text-gray-300 hover:text-white border border-neutral-900 hover:border-accent/20 bg-neutral-950/40 hover:bg-accent-bg transition-all duration-300 flex items-center gap-2 cursor-pointer shrink-0"
         >
           <span>⌨ Shortcuts</span>
-          <kbd className="hidden sm:inline px-1.5 py-0.5 rounded bg-[#161324] border border-emerald-500/30 text-emerald-400 font-mono text-[9px] font-bold">?</kbd>
+          <kbd className="hidden sm:inline px-1.5 py-0.5 rounded bg-[#161324] border border-[var(--color-accent-border)] text-accent font-mono text-[9px] font-bold">?</kbd>
         </button>
       </div>
     </nav>

@@ -157,7 +157,7 @@ export default function Skills() {
           </div>
           
           {/* Scroll Direction Guide */}
-          <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400 tracking-wider uppercase bg-emerald-500/10 px-3 py-1.5 rounded-full border border-emerald-500/20">
+          <div className="flex items-center gap-2 text-xs font-semibold text-accent tracking-wider uppercase bg-accent-bg px-3 py-1.5 rounded-full border border-accent/20">
             <span>Scroll</span>
             <ArrowDown className="w-3.5 h-3.5 animate-bounce" />
           </div>
@@ -175,22 +175,22 @@ export default function Skills() {
               return (
                 <div 
                   key={idx}
-                  className="w-[85vw] sm:w-[26rem] h-[28rem] rounded-2xl p-8 flex flex-col justify-between relative bg-[#0c0a12] border border-emerald-500/20 shadow-[0_0_50px_rgba(16,185,129,0.02)] transition-all duration-300 hover:border-emerald-500/40 hover:shadow-[0_0_30px_rgba(16,185,129,0.08)] group"
+                  className="w-[85vw] sm:w-[26rem] h-[28rem] rounded-2xl p-8 flex flex-col justify-between relative bg-[#0c0a12] border border-[var(--color-accent-border)] shadow-[0_0_50px_rgba(192,132,252,0.02)] transition-all duration-300 hover:border-accent/40 hover:shadow-[0_0_30px_rgba(192,132,252,0.08)] group"
                 >
                   <div>
                     {/* Top index & tool count */}
                     <div className="flex items-center justify-between mb-8">
-                      <span className="text-emerald-400/80 font-mono text-sm tracking-widest font-bold">
+                      <span className="text-accent/80 font-mono text-sm tracking-widest font-bold">
                         {cardNumber}
                       </span>
-                      <div className="h-px bg-emerald-500/20 flex-grow mx-4" />
+                      <div className="h-px bg-accent/25 flex-grow mx-4" />
                       <span className="text-gray-500 text-xs font-mono tracking-wider uppercase font-medium">
                         {domain.items.length} Tools
                       </span>
                     </div>
 
                     {/* Category Title */}
-                    <h3 className="text-2xl font-bold text-white mb-8 tracking-wide group-hover:text-emerald-400 transition-colors duration-300">
+                    <h3 className="text-2xl font-bold text-white mb-8 tracking-wide group-hover:text-accent transition-colors duration-300">
                       {domain.category}
                     </h3>
 
@@ -201,7 +201,7 @@ export default function Skills() {
                           key={tIdx} 
                           className="flex items-center gap-3 group/item"
                         >
-                          <div className="w-10 h-10 shrink-0 flex items-center justify-center rounded-xl bg-neutral-900 border border-emerald-500/10 text-emerald-400 group-hover/item:border-emerald-400 group-hover/item:bg-emerald-500/5 transition-all duration-300">
+                          <div className="w-10 h-10 shrink-0 flex items-center justify-center rounded-xl bg-neutral-900 border border-accent/15 text-accent group-hover/item:border-accent group-hover/item:bg-accent-bg transition-all duration-300">
                             {getSkillIcon(tool)}
                           </div>
                           <span className="text-sm font-medium text-gray-300 group-hover/item:text-white transition-colors duration-200 truncate">
@@ -213,9 +213,9 @@ export default function Skills() {
                   </div>
 
                   {/* Card bottom accents */}
-                  <div className="flex items-center justify-between pt-6 border-t border-emerald-500/10 mt-auto">
+                  <div className="flex items-center justify-between pt-6 border-t border-[var(--color-accent-border)] mt-auto">
                     {/* Emerald green bar */}
-                    <div className="w-12 h-1.5 bg-emerald-500 rounded-full shadow-[0_0_10px_rgba(16,185,129,0.5)]" />
+                    <div className="w-12 h-1.5 bg-accent rounded-full shadow-[0_0_10px_rgba(192,132,252,0.5)]" />
                     
                     {/* Category code */}
                     <span className="text-[10px] font-mono tracking-widest text-gray-600 font-bold uppercase">
@@ -229,10 +229,10 @@ export default function Skills() {
         </div>
 
         {/* Scroll Progress Bar at the bottom */}
-        <div className="max-w-6xl w-full mx-auto mt-6 relative h-[2px] bg-emerald-500/10 rounded-full overflow-hidden">
+        <div className="max-w-6xl w-full mx-auto mt-6 relative h-[2px] bg-accent/20 rounded-full overflow-hidden">
           <motion.div 
             style={{ scaleX: scrollYProgress, originX: 0 }}
-            className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-emerald-500 to-teal-400 shadow-[0_0_8px_rgba(16,185,129,0.5)]"
+            className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-accent to-purple-600 shadow-[0_0_8px_rgba(192,132,252,0.5)]"
           />
         </div>
 
