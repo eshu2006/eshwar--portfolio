@@ -13,7 +13,7 @@ export const personalData = {
   phone: '6304854056',
   location: 'Hyderabad, Telangana, India',
   github: 'https://github.com/eshu2006',
-  linkedin: 'https://linkedin.com/in/pokala-eshwar-5b1285290', // standard handle based on name
+  linkedin: 'https://www.linkedin.com/in/eshwar-pokala-337a6b321/', // standard handle based on name
   portfolio: '#',
   linktree: 'https://linktr.ee/eshwarpokala28',
   about: 'Information Technology student at VNR VJIET with a strong passion for full-stack web development and AI integration. Experienced in developing scalable AI-driven platforms, deep learning applications, and event management solutions.'
