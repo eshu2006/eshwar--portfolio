@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #c084fc;
+  --color-accent-bg: rgba(192, 132, 252, 0.08);
+  --color-accent-border: rgba(192, 132, 252, 0.15);
+  --color-dark-bg: #08060d;
+  --color-card-bg: rgba(13, 11, 20, 0.6);
+}
+
+:root {
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  background-color: var(--color-dark-bg);
+  color: #e2e8f0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Styles */
+.glass {
+  background: var(--color-card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-accent-border);
+}
+
+.glass-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-hover:hover {
+  background: rgba(13, 11, 20, 0.85);
+  border-color: rgba(192, 132, 252, 0.35);
+  box-shadow: 0 0 25px rgba(192, 132, 252, 0.08);
+  transform: translateY(-4px);
+}
+
+/* Gradients */
+.text-gradient-purple {
+  background: linear-gradient(135deg, #f3f4f6 30%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, #c084fc 0%, #aa3bff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glowing Border Effect */
+.glow-card {
+  position: relative;
+}
+.glow-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(to bottom right, rgba(192, 132, 252, 0.4), transparent, rgba(170, 59, 255, 0.2));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+.glow-card:hover::after {
+  opacity: 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #06050a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c1926;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #aa3bff;
+}
+
+/* Page transitons or scroll behaviors */
+html {
+  scroll-behavior: smooth;
+}
