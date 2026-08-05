@@ -32,16 +32,17 @@ export default function ProjectCard({ project, index = 0 }) {
           <div className="p-3 rounded-xl bg-accent-bg border border-[var(--color-accent-border)] w-fit text-accent">
             <FolderGit2 className="w-6 h-6" />
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             {project.github && (
               <a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub Code"
-                className="text-gray-400 hover:text-accent p-1.5 transition-colors duration-300"
+                className="text-xs font-semibold text-gray-400 hover:text-accent border border-neutral-900 hover:border-accent/30 bg-neutral-950/40 hover:bg-accent-bg px-3 py-1.5 rounded-xl transition-all duration-300 flex items-center gap-1.5 cursor-pointer"
               >
-                <FaGithub className="w-5 h-5" />
+                <span>Code</span>
+                <FaGithub className="w-3.5 h-3.5" />
               </a>
             )}
             {project.demo && project.demo !== '#' && (
@@ -50,9 +51,10 @@ export default function ProjectCard({ project, index = 0 }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Live Demo"
-                className="text-gray-400 hover:text-accent p-1.5 transition-colors duration-300"
+                className="text-xs font-semibold text-gray-400 hover:text-accent border border-neutral-900 hover:border-accent/30 bg-neutral-950/40 hover:bg-accent-bg px-3 py-1.5 rounded-xl transition-all duration-300 flex items-center gap-1.5 cursor-pointer"
               >
-                <ExternalLink className="w-5 h-5" />
+                <span>Visit</span>
+                <ExternalLink className="w-3.5 h-3.5" />
               </a>
             )}
           </div>
