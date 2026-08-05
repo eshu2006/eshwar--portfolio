@@ -4,6 +4,12 @@ import diamondCert from '../assets/images/diamond-coder-cert.png'
 import gdgcCert from '../assets/images/gdgc-challenge-cert.png'
 import infosysCert from '../assets/images/infosys-internship-cert.png'
 
+import mailcraftCover from '../assets/images/mailcraft-cover.png'
+import nextactionCover from '../assets/images/nextaction-cover.png'
+import enterpriseCover from '../assets/images/enterprise-cover.png'
+import fakenewsCover from '../assets/images/fakenews-cover.png'
+import studentcompanionCover from '../assets/images/studentcompanion-cover.png'
+
 
 export const personalData = {
   name: 'POKALA ESHWAR',
@@ -45,22 +51,27 @@ export const experienceData = [
 export const skillsData = [
   {
     category: 'Programming Languages',
+    code: 'PROG',
     items: ['C', 'JavaScript', 'Python', 'Java', 'C++']
   },
   {
     category: 'Technologies',
+    code: 'TECH',
     items: ['HTML', 'CSS', 'React JS', 'Bootstrap', 'Express.js', 'Node.js', 'LangChain']
   },
   {
     category: 'Databases',
+    code: 'DB',
     items: ['MySQL', 'MongoDB']
   },
   {
     category: 'Other Tools',
+    code: 'TOOL',
     items: ['Git', 'GitHub Copilot', 'Postman', 'Power BI', 'Claude', 'Antigravity']
   },
   {
     category: 'Core Concepts',
+    code: 'CS',
     items: ['OOPS', 'DSA', 'DBMS', 'Operating Systems', 'Computer Networks']
   }
 ]
@@ -70,6 +81,7 @@ export const projectsData = [
     id: 1,
     title: 'MailCraft AI - Intelligent Email Generator',
     tech: 'React.js, Vite, Tailwind CSS, Framer Motion, FastAPI, Python, MongoDB, Google Gemini API',
+    image: mailcraftCover,
     bullets: [
       'Engineered a modern AI-powered email generation platform using React, FastAPI, and Google Gemini AI, facilitating secure JWT user authentication and automated email drafting.',
       'Integrated advanced email workflows permitting PDF/TXT downloads, writing tone adjustment, direct Gmail sending, and dynamic email histories.'
@@ -81,6 +93,7 @@ export const projectsData = [
     id: 2,
     title: 'Intelligent Next Best Action Platform',
     tech: 'React, TypeScript, Vite, Tailwind CSS, FastAPI, Python, MongoDB, Google Gemini, Multi-Agent RAG',
+    image: nextactionCover,
     bullets: [
       'Engineered a Planner-Based Multi-Agent Decision Intelligence Platform that dynamically orchestrates specialized AI agents (Incident, Context, Risk, Recommendation) to evaluate organizational risk.',
       'Integrated a RAG pipeline utilizing vector search against enterprise policies and threat intelligence databases, incorporating Human-in-the-Loop review workflows.'
@@ -92,6 +105,7 @@ export const projectsData = [
     id: 3,
     title: 'Enterprise Decision Intelligence Platform',
     tech: 'Python, FastAPI, React.js, MongoDB, Google Gemini API, Render, Vercel',
+    image: enterpriseCover,
     bullets: [
       'Engineered a full-stack AI-powered decision intelligence platform using FastAPI and React with multi-agent orchestration, secure authentication, enterprise incident management, and RESTful APIs.',
       'Integrated AI-driven incident analysis, memory-based incident retrieval, document ingestion, approval workflows, MongoDB data persistence, and cloud deployment to deliver scalable enterprise decision support.'
@@ -103,6 +117,7 @@ export const projectsData = [
     id: 4,
     title: 'Fake News Detection using Deep Learning',
     tech: 'Python, TensorFlow, PyTorch, DistilBERT, CNN, Scikit-learn, Pandas, NumPy, NLTK, G Colab',
+    image: fakenewsCover,
     bullets: [
       'Developed a fake news detection system using DistilBERT, CNN, and FastText models to classify news articles as real or fake using NLP techniques.',
       'Performed text preprocessing, tokenization, model training, and evaluation in Python to improve classification accuracy.'
@@ -114,6 +129,7 @@ export const projectsData = [
     id: 5,
     title: 'Student Companion System',
     tech: 'React, HTML5, CSS3, Bootstrap, JavaScript',
+    image: studentcompanionCover,
     bullets: [
       'Developed a responsive web-based platform to support students with academic planning, resource sharing, and peer collaboration.',
       'Implemented secure user authentication, dynamic content rendering, and an intuitive user interface to ensure smooth navigation and a scalable user experience.'

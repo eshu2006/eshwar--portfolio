@@ -6,10 +6,8 @@ import { NAVIGATION_LINKS } from '../../utils/constants'
 import { motion, AnimatePresence } from 'framer-motion'
 import Button from '../common/Button'
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+export default function Navbar({ onOpenShortcuts }) {
   const [scrolled, setScrolled] = useState(false)
-  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,19 +16,6 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  // Navigation link list
-  const links = [
-    { name: 'About', path: '/#about' },
-    { name: 'Skills', path: '/#skills' },
-    { name: 'Experience', path: '/#experience' },
-    { name: 'Projects', path: '/#projects' },
-    { name: 'Certificates', path: '/#certificates' },
-    { name: 'Awards', path: '/#achievements' },
-    { name: 'Contact', path: '/#contact' },
-  ]
-
-  const isHome = location.pathname === '/'
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -44,62 +29,15 @@ export default function Navbar() {
           PE
         </Link>
 
-        {/* Desktop Navigation Links */}
-        <div className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
-            <a
-              key={link.name}
-              href={link.path}
-              className="text-sm font-medium text-gray-300 hover:text-accent transition-colors duration-300"
-            >
-              {link.name}
-            </a>
-          ))}
-          <Link to="/resume">
-            <Button variant="secondary" className="py-2 px-4 text-xs font-semibold">
-              Resume <ArrowUpRight className="w-3.5 h-3.5" />
-            </Button>
-          </Link>
-        </div>
-
-        {/* Mobile menu button */}
-        <button 
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-gray-300 hover:text-white focus:outline-none"
+        {/* Desktop / Mobile Shortcuts Toggle */}
+        <button
+          onClick={onOpenShortcuts}
+          className="px-4.5 py-2.5 rounded-xl text-xs font-semibold text-gray-300 hover:text-white border border-neutral-900 hover:border-emerald-500/20 bg-neutral-950/40 hover:bg-emerald-500/5 transition-all duration-300 flex items-center gap-2 cursor-pointer"
         >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          <span>⌨ Shortcuts</span>
+          <kbd className="hidden sm:inline px-1.5 py-0.5 rounded bg-[#161324] border border-emerald-500/30 text-emerald-400 font-mono text-[9px] font-bold">?</kbd>
         </button>
       </div>
-
-      {/* Mobile drawer */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-b border-[var(--color-accent-border)] bg-[#08060d] overflow-hidden"
-          >
-            <div className="px-6 py-4 flex flex-col gap-4">
-              {links.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className="text-sm font-medium text-gray-300 hover:text-accent py-2 transition-colors duration-300"
-                >
-                  {link.name}
-                </a>
-              ))}
-              <Link to="/resume" onClick={() => setIsOpen(false)}>
-                <Button variant="secondary" className="w-full py-2.5 text-xs font-semibold justify-center">
-                  Resume <ArrowUpRight className="w-3.5 h-3.5" />
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </nav>
   )
 }

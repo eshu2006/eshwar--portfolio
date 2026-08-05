@@ -1,10 +1,25 @@
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { ArrowLeft, Printer, Download, Mail, Phone, MapPin, Award, Briefcase, GraduationCap, Code } from 'lucide-react'
 import { personalData, educationData, experienceData, skillsData, projectsData, certificatesData, achievementsData, volunteeringData } from '../data/portfolioData'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import Button from '../components/common/Button'
 
 export default function Resume() {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      const key = e.key.toUpperCase()
+      if (e.key === 'Escape' || key === 'H' || e.key === '0') {
+        e.preventDefault()
+        navigate('/')
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [navigate])
+
   const handlePrint = () => {
     window.print()
   }

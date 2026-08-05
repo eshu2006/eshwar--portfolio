@@ -12,9 +12,21 @@ export default function ProjectCard({ project, index = 0 }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="glass glass-hover rounded-2xl p-6 glow-card flex flex-col justify-between h-full"
+      className="glass glass-hover rounded-2xl p-6 glow-card flex flex-col justify-between h-full overflow-hidden group"
     >
       <div>
+        {/* Project Cover Image */}
+        {project.image && (
+          <div className="relative -mx-6 -mt-6 mb-6 overflow-hidden h-48 border-b border-[var(--color-accent-border)]">
+            <img 
+              src={project.image} 
+              alt={project.title} 
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0d0b14]/70 via-transparent to-transparent" />
+          </div>
+        )}
+
         {/* Header Icon & Links */}
         <div className="flex justify-between items-center mb-6">
           <div className="p-3 rounded-xl bg-accent-bg border border-[var(--color-accent-border)] w-fit text-accent">
